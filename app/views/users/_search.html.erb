@@ -1,18 +1,20 @@
 <div class="mt-5">
-  <%= form_with url: user_path(@user) ,remote: false, method: :get do |f| %>
-    <%= f.date_field :day %>
+  <%= form_with url: user_path(@user) ,remote: true, method: :get do |f| %>
+    <%= f.date_field :day, value: @day %>
     <%= f.submit "検索", class: "btn btn-sm btn-info" %>
   <% end %>
 </div>
 
-<div class="mt-3">
-  <h2>検索結果</h2>
-  <table class="table table-bordered">
-    <tr>
-      <th>投稿数</th>
-    </tr>
-    <tr>
-      <td><%= @book_day.count %></td>
-    </tr>
-  </table>
-</div>
+<% if @book_day != nil %>
+  <div class="mt-3">
+    <h2>検索結果</h2>
+    <table class="table table-bordered">
+      <tr>
+        <th>投稿数</th>
+      </tr>
+      <tr>
+        <td><%= @book_day.count %></td>
+      </tr>
+    </table>
+  </div>
+<% end %>

@@ -32,7 +32,3 @@ class Book < ApplicationRecord
     end
   end
 end
-
-def self.created_book_looks(day)
-  Book.where(created_at: day)
-end
