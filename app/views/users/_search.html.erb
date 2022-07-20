@@ -1,0 +1,6 @@
+<div class="mt-5">
+  <%= form_with url: user_path(@user) ,remote: false, method: :get do |f| %>
+    <%= f.date_field :day %>
+    <%= f.submit "検索", class: "btn btn-sm btn-info" %>
+  <% end %>
+</div>

@@ -16,6 +16,8 @@ class UsersController < ApplicationController
     @book_4days_ago = @books.created_4day_ago
     @book_5days_ago = @books.created_5day_ago
     @book_6days_ago = @books.created_6day_ago
+    
+    
   end
 
   def index
