@@ -45,15 +45,39 @@ $(document).on('turbolinks:load', function () {
             }]
         },
         options: {
-            scales: {
-                y: {
-                    beginAtZero: true,
-                }
-            },
-            title: {
-              display: true,
-              text: '7日間の投稿数の比較'
-            }
+          title: {
+            display: true,
+            text: '7日間の投稿数の比較'
+          },
+          responsive: true,
+          scales: {
+            yAxes: [{
+                 ticks: {
+                   display: true,
+                   suggestedMin: 0,
+                   suggestedMax: 10,
+                     stepSize: 1,
+                     beginAtZero: true
+                 }
+             }]
+            //  chart.js ver3の場合（このアプリはver2をインストール）
+            //  options: {
+            //   title: {
+            //     display: true,
+            //     text: '7日間の投稿数の比較'
+            //   },
+            //   responsive: true,
+            //   scales: {
+            //     y:{
+            //       suggestedMin: 0,
+            //       suggestedMax: 10
+            //     },
+            //     x:{
+            //       stacked: true
+            //     },
+            //   },
+            // }
+          },
         }
     });
 });
