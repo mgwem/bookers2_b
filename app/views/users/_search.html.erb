@@ -4,3 +4,15 @@
     <%= f.submit "検索", class: "btn btn-sm btn-info" %>
   <% end %>
 </div>
+
+<div class="mt-3">
+  <h2>検索結果</h2>
+  <table class="table table-bordered">
+    <tr>
+      <th>投稿数</th>
+    </tr>
+    <tr>
+      <td><%= @book_day.count %></td>
+    </tr>
+  </table>
+</div>
