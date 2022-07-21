@@ -17,10 +17,6 @@ class UsersController < ApplicationController
     @book_5days_ago = @books.created_5day_ago
     @book_6days_ago = @books.created_6day_ago
 
-    if params[:day] != nil
-      @day = params[:day]
-      @book_day = @books.where(['created_at LIKE ? ', "#{@day}%"])
-    end
   end
 
   def index
@@ -39,6 +35,12 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+  
+  def daily_posts
+    user = User.find(params[:user_id])
+    @books = user.books.where(created_at: params[:created_at].to_date.all_day)
+    render :daily_posts_form
   end
 
   private
