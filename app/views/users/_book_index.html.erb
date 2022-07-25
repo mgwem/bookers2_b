@@ -31,7 +31,7 @@
         <% if @book_last_week.count == 0 %>
           先週の投稿が0件のため計算できません
         <% else %>
-          <% @the_day_before = @book_this_week.count / @book_last_week.count.to_f %>
+          <% @the_week_before = @book_this_week.count / @book_last_week.count.to_f %>
           <%= (@the_week_before * 100).round %>%
         <% end %>
       </td>
